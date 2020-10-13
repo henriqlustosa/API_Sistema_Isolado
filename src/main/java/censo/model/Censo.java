@@ -1,5 +1,9 @@
 package censo.model;
 
+
+
+
+
 import censo.model.Censo;
 
 public class Censo {
@@ -14,8 +18,8 @@ public class Censo {
 	private String nm_unidade_funcional;
 	private String nm_acomodacao;
 	private String st_leito;
-	private String dt_internacao;
-	private String dt_entrada_setor;
+	private String  dt_internacao;
+	private String  dt_entrada_setor;
 	private String nm_especialidade;
 	private String nm_medico;
 	private String dt_ultimo_evento;
@@ -29,8 +33,8 @@ public class Censo {
 	private String nm_carater_internacao;
 	private String nm_origem_internacao;
 	private String nr_procedimento;
-	private String dt_alta_medica;
-	private String dt_saida_paciente;
+	private String  dt_alta_medica;
+	private String  dt_saida_paciente;
 	public String getCd_prontuario() {
 		return cd_prontuario;
 	}
@@ -97,16 +101,16 @@ public class Censo {
 	public void setSt_leito(String st_leito) {
 		this.st_leito = st_leito;
 	}
-	public String getDt_internacao() {
+	public String  getDt_internacao() {
 		return dt_internacao;
 	}
-	public void setDt_internacao(String dt_internacao) {
+	public void setDt_internacao(String  dt_internacao) {
 		this.dt_internacao = dt_internacao;
 	}
-	public String getDt_entrada_setor() {
+	public String  getDt_entrada_setor() {
 		return dt_entrada_setor;
 	}
-	public void setDt_entrada_setor(String dt_entrada_setor) {
+	public void setDt_entrada_setor(String  dt_entrada_setor) {
 		this.dt_entrada_setor = dt_entrada_setor;
 	}
 	public String getNm_especialidade() {
@@ -121,11 +125,11 @@ public class Censo {
 	public void setNm_medico(String nm_medico) {
 		this.nm_medico = nm_medico;
 	}
-	public String getDt_ultimo_evento() {
+	public String  getDt_ultimo_evento() {
 		return dt_ultimo_evento;
 	}
-	public void setDt_ultimo_evento(String dt_ultimo_evento) {
-		this.dt_ultimo_evento = dt_ultimo_evento;
+	public void setDt_ultimo_evento(String  dt_ultimo_evento2) {
+		this.dt_ultimo_evento = dt_ultimo_evento2;
 	}
 	public String getNm_origem() {
 		return nm_origem;
@@ -189,16 +193,16 @@ public class Censo {
 	public void setNr_procedimento(String nr_procedimento) {
 		this.nr_procedimento = nr_procedimento;
 	}
-	public String getDt_alta_medica() {
+	public String  getDt_alta_medica() {
 		return dt_alta_medica;
 	}
-	public void setDt_alta_medica(String dt_alta_medica) {
+	public void setDt_alta_medica(String  dt_alta_medica) {
 		this.dt_alta_medica = dt_alta_medica;
 	}
 	public String getDt_saida_paciente() {
 		return dt_saida_paciente;
 	}
-	public void setDt_saida_paciente(String dt_saida_paciente) {
+	public void setDt_saida_paciente(String  dt_saida_paciente) {
 		this.dt_saida_paciente = dt_saida_paciente;
 	}
 	@Override

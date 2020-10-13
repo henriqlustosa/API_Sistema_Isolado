@@ -3,9 +3,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 import censo.model.Censo;
@@ -45,6 +45,7 @@ public class CensoDto {
 				censo.setNm_acomodacao(resultSet.getString("nm_acomodacao"));
 				censo.setSt_leito(resultSet.getString("st_leito"));
 
+				//StringFormat StringFormat = new SimpleStringFormat("dd/MM/yyyy HH:mm");
 				DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 				String dt_internacao = dateFormat.format(resultSet.getTimestamp("dt_internacao"));
 
