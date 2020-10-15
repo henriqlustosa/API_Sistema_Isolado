@@ -4,10 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.List;
-
 import censo.model.Censo;
 import censo.persistence.Conexao;
 
@@ -41,7 +38,6 @@ public class CensoDto {
 				censo.setNr_quarto(resultSet.getString("quarto"));
 				censo.setDt_internacao_data(resultSet.getString("data_internacao_data"));
 				censo.setDt_internacao_hora(resultSet.getString("data_internacao_hora"));
-				
 				censo.setNm_clinica(resultSet.getString("especialidade"));
 				censo.setIn_sexo(resultSet.getString("sexo"));
 				censo.setNr_idade(resultSet.getInt( "idade"));
