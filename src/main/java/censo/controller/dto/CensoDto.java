@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import censo.model.Censo;
 import censo.persistence.Conexao;
-
+import censo.model.Censo;
+import censo.persistence.Conexao;
 public class CensoDto {
 
 	public static final List<Censo> Censos = null;
