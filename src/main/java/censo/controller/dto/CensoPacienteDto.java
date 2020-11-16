@@ -9,17 +9,17 @@ import java.sql.SQLException;
 import censo.model.Censo;
 import censo.persistence.Conexao;
 
-public class CensoPacienteDto {
+public class CensoPacienteDto{
 	public static final Censo Censo = null;
 
-	public static Censo Censos() {
+	public static Censo Censos(Long _prontuario) {
 
 		Censo censos = new Censo();
 		PreparedStatement preparedStatement;
 
 		String sqlString = "SELECT prontuario, nome, nascimento, quarto, data_internacao_data, data_internacao_hora, \r\n" + 
 				"       especialidade, sexo, \"Idade\" as idade, \"CID\" as cid, \"Descrição do CID\" as descricao, unidade_funcional, tempo, vinculo\r\n" + 
-				"  FROM agh.v_ain_censo_24_horas where data_internacao_data != '' ;";
+				"  FROM agh.v_ain_censo_24_horas where data_internacao_data != '' and prontuario = " + _prontuario + " ;" ;
 
 		try {
 
