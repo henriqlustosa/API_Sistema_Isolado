@@ -14,7 +14,7 @@ public class CensoPacienteDto{
 
 	public static Censo Censos(Long _prontuario) {
 
-		Censo censos = new Censo();
+		Censo censo = new Censo();
 		PreparedStatement preparedStatement;
 
 		String sqlString = "SELECT prontuario, nome, nascimento, quarto, data_internacao_data, data_internacao_hora, \r\n" + 
@@ -28,9 +28,9 @@ public class CensoPacienteDto{
 
 			ResultSet resultSet = preparedStatement.executeQuery();
 
-			
+			while (resultSet.next()) {
 
-				Censo censo = new Censo();
+				
 
 				censo.setCd_prontuario(resultSet.getString("prontuario"));
 				censo.setNm_paciente(resultSet.getString("nome"));
@@ -46,7 +46,7 @@ public class CensoPacienteDto{
 				censo.setNm_unidade_funcional(resultSet.getString("unidade_funcional"));
 				censo.setTempo(resultSet.getString("tempo"));
 				censo.setVinculo(resultSet.getString("vinculo"));
-			
+			}
 
 			
 		} catch (SQLException e) {
@@ -55,7 +55,7 @@ public class CensoPacienteDto{
 			e.printStackTrace();
 		}
 
-		return censos ;
+		return censo ;
 	}
 
 }
