@@ -80,6 +80,14 @@ public class PacienteDto {
 				paciente.setDt_naturalizacao(resultSet.getString("dt_naturalizacao"));
 				paciente.setNr_portaria(resultSet.getLong("nr_portaria"));
 				paciente.setDc_observacao(resultSet.getString("dc_observacao"));
+				paciente.setSituacao_vinculo(resultSet.getString("situacao_vinculo"));
+				paciente.setCausa_termino(resultSet.getString("causa_termino"));
+				paciente.setValidade_termino(resultSet.getString("validade_termino"));
+				paciente.setGrau_dep_vinculo(resultSet.getString("grau_dep_vinculo"));
+				paciente.setNome_titular(resultSet.getString("nome_titular"));
+				paciente.setDdd_fone_comercial(resultSet.getString("ddd_fone_comercial"));
+				paciente.setFone_comercial(resultSet.getString("fone_comercial"));
+				paciente.setEmail(resultSet.getString("email"));
 				
 				//DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 				//String dt_consulta = dateFormat.format(resultSet.getTimestamp("dt_consulta"));

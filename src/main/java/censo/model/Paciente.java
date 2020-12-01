@@ -56,6 +56,20 @@ public class Paciente {
 	private String dt_naturalizacao;
 	private Long nr_portaria;
 	private String dc_observacao;
+	private String situacao_vinculo ;
+	private String causa_termino; 
+	private String validade_termino;
+	private String grau_dep_vinculo; 
+	private String nome_titular;
+	private String ddd_fone_comercial; 
+	private String fone_comercial;
+	private String email;
+	
+	
+	
+	
+	
+	
 	public Long getCd_prontuario() {
 		return cd_prontuario;
 	}
@@ -426,8 +440,7 @@ public class Paciente {
 		result = prime * result + ((nm_pai == null) ? 0 : nm_pai.hashCode());
 		result = prime * result + ((nm_situacao == null) ? 0 : nm_situacao.hashCode());
 		result = prime * result + ((nm_vinculo == null) ? 0 : nm_vinculo.hashCode());
-		result = prime * result
-				+ ((nr_cartao_nacional_saude_mae == null) ? 0 : nr_cartao_nacional_saude_mae.hashCode());
+		result = prime * result + ((nr_cartao_nacional_saude_mae == null) ? 0 : nr_cartao_nacional_saude_mae.hashCode());
 		result = prime * result + ((nr_cartao_saude == null) ? 0 : nr_cartao_saude.hashCode());
 		result = prime * result + ((nr_cpf == null) ? 0 : nr_cpf.hashCode());
 		result = prime * result + ((nr_ddd_fone == null) ? 0 : nr_ddd_fone.hashCode());
@@ -446,6 +459,14 @@ public class Paciente {
 		result = prime * result + ((sg_uf_endereco == null) ? 0 : sg_uf_endereco.hashCode());
 		result = prime * result + ((sg_uf_sigla_emitiu_docto == null) ? 0 : sg_uf_sigla_emitiu_docto.hashCode());
 		result = prime * result + ((tp_endereco == null) ? 0 : tp_endereco.hashCode());
+		result = prime * result + ((situacao_vinculo == null) ? 0 : situacao_vinculo.hashCode());
+		result = prime * result + ((causa_termino == null) ? 0 : causa_termino.hashCode());
+		result = prime * result + ((validade_termino == null) ? 0 : validade_termino.hashCode());
+		result = prime * result + ((grau_dep_vinculo == null) ? 0 : grau_dep_vinculo.hashCode());
+		result = prime * result + ((nome_titular == null) ? 0 : nome_titular.hashCode());
+		result = prime * result + ((ddd_fone_comercial == null) ? 0 : ddd_fone_comercial.hashCode());
+		result = prime * result + ((fone_comercial == null) ? 0 : fone_comercial.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		return result;
 	}
 	@Override
@@ -732,6 +753,95 @@ public class Paciente {
 				return false;
 		} else if (!tp_endereco.equals(other.tp_endereco))
 			return false;
+		if (situacao_vinculo == null) {
+			if (other.situacao_vinculo != null)
+				return false;
+		} else if (!situacao_vinculo.equals(other.situacao_vinculo))
+			return false;
+		if (causa_termino == null) {
+			if (other.causa_termino != null)
+				return false;
+		} else if (!causa_termino.equals(other.causa_termino))
+			return false;
+		if (validade_termino == null) {
+			if (other.validade_termino != null)
+				return false;
+		} else if (!validade_termino.equals(other.validade_termino))
+			return false;
+		if (grau_dep_vinculo == null) {
+			if (other.grau_dep_vinculo != null)
+				return false;
+		} else if (!grau_dep_vinculo.equals(other.grau_dep_vinculo))
+			return false;
+		if (nome_titular == null) {
+			if (other.nome_titular != null)
+				return false;
+		} else if (!nome_titular.equals(other.nome_titular))
+			return false;
+		if (ddd_fone_comercial == null) {
+			if (other.ddd_fone_comercial != null)
+				return false;
+		} else if (!ddd_fone_comercial.equals(other.ddd_fone_comercial))
+			return false;
+		if (fone_comercial == null) {
+			if (other.fone_comercial != null)
+				return false;
+		} else if (!fone_comercial.equals(other.fone_comercial))
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		
 		return true;
+	}
+	public String getSituacao_vinculo() {
+		return situacao_vinculo;
+	}
+	public void setSituacao_vinculo(String situacao_vinculo) {
+		this.situacao_vinculo = situacao_vinculo;
+	}
+	public String getCausa_termino() {
+		return causa_termino;
+	}
+	public void setCausa_termino(String causa_termino) {
+		this.causa_termino = causa_termino;
+	}
+	public String getValidade_termino() {
+		return validade_termino;
+	}
+	public void setValidade_termino(String validade_termino) {
+		this.validade_termino = validade_termino;
+	}
+	public String getGrau_dep_vinculo() {
+		return grau_dep_vinculo;
+	}
+	public void setGrau_dep_vinculo(String grau_dep_vinculo) {
+		this.grau_dep_vinculo = grau_dep_vinculo;
+	}
+	public String getNome_titular() {
+		return nome_titular;
+	}
+	public void setNome_titular(String nome_titular) {
+		this.nome_titular = nome_titular;
+	}
+	public String getDdd_fone_comercial() {
+		return ddd_fone_comercial;
+	}
+	public void setDdd_fone_comercial(String ddd_fone_comercial) {
+		this.ddd_fone_comercial = ddd_fone_comercial;
+	}
+	public String getFone_comercial() {
+		return fone_comercial;
+	}
+	public void setFone_comercial(String fone_comercial) {
+		this.fone_comercial = fone_comercial;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }
