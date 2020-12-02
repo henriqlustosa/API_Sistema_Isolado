@@ -18,9 +18,9 @@ public class PacienteController {
 		
 		Paciente paciente = PacienteDto.paciente(prontuarioId);	
 		
-		if(paciente.getCd_prontuario() == null) {
-			return ResponseEntity.notFound().build();			
-		}
+		//if(paciente.getCd_prontuario() == null) {
+			//return ResponseEntity.notFound().build();			
+		//}
 		return ResponseEntity.ok(paciente); 
 	}
 }

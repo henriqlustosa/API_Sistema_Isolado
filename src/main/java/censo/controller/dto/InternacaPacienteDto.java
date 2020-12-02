@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-
+import censo.model.Censo;
 import censo.model.Internacao;
 import censo.persistence.Conexao;
 
@@ -26,8 +26,9 @@ public class InternacaPacienteDto {
 	
 public static List<Internacao> Internacoes(Long _prontuario) {
 		
-		
+		Internacao internacao_1 = new Internacao();
 		List<Internacao> internacoes = new ArrayList<Internacao>();
+		internacoes.add(internacao_1);
 		PreparedStatement preparedStatement;
 
 				//  WHERE dt_internacao::date between '2019-08-21' AND '2019-08-30' ORDER BY dt_internacao;
@@ -54,7 +55,7 @@ public static List<Internacao> Internacoes(Long _prontuario) {
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			while (resultSet.next()) {
-
+				internacoes.remove(0);
 				Internacao internacao = new Internacao();
 
 				internacao.setCd_prontuario(resultSet.getLong("cd_prontuario"));

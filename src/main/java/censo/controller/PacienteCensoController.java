@@ -19,9 +19,9 @@ public class PacienteCensoController {
 		
 		Censo censo = CensoPacienteDto.Censos(prontuarioId);	
 		
-		if(censo.getCd_prontuario() == null) {
-			return ResponseEntity.notFound().build();			
-		}
+		//if(censo.getCd_prontuario() == null) {
+		//	return ResponseEntity.notFound().build();			
+		//}
 		return ResponseEntity.ok(censo); 
 	}
 

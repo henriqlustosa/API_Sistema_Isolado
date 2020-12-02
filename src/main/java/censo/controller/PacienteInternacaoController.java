@@ -20,9 +20,9 @@ public class PacienteInternacaoController {
 		
 				List<Internacao> internacoes = InternacaPacienteDto.Internacoes(prontuarioId);
 			
-				if(internacoes == null) {
-					return ResponseEntity.notFound().build();
-				}
+				//if(internacoes == null) {
+					//return ResponseEntity.notFound().build();
+				//}
 				return ResponseEntity.ok(internacoes);
 
 			}
