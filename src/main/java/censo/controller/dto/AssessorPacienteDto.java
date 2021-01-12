@@ -6,17 +6,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 import censo.model.Paciente;
 import censo.persistence.Conexao;
 
 public class AssessorPacienteDto {
-	public static Paciente paciente(Long _prontuario) {
+	public static ArrayList<Paciente> paciente(int codigoDoRH, String nome,String mae ,int CPF,int CNS, String dataDeNascimento,String logradouro, int numero, String bairro, int RF, String status) {
+		ArrayList<Paciente> pacientes = new ArrayList<Paciente>();
 		Paciente paciente = new Paciente();
 		PreparedStatement preparedStatement;
 		try {
 			
-			String sqlString = "SELECT * FROM agh.v_paciente WHERE cd_prontuario = " + _prontuario;
+			String sqlString = "SELECT * FROM agh.v_paciente where cd_prontuario =" + codigoDoRH + " and nm_nome like '" + nome + "%' and nm_mae like '" + mae + "%' and nr_cpf ="+ CPF +" and nr_cartao_saude = "+ CNS +" and dt_data_nascimento = '"+ dataDeNascimento +"' and dc_logradouro like '" + logradouro + "%' and nr_logradouro =" + numero +" and dc_bairro like '" + bairro +"%' and cd_rf_matricula = '" +  RF + "' and nm_situacao ='"+ status +"'";
 			Connection conn = new Conexao().getConnection();
 			preparedStatement = conn.prepareStatement(sqlString);
 			ResultSet resultSet = preparedStatement.executeQuery();
@@ -88,6 +90,7 @@ public class AssessorPacienteDto {
 				paciente.setDdd_fone_comercial(resultSet.getString("ddd_fone_comercial"));
 				paciente.setFone_comercial(resultSet.getString("fone_comercial"));
 				paciente.setEmail(resultSet.getString("email"));
+				pacientes.add(paciente);
 				
 				//DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 				//String dt_consulta = dateFormat.format(resultSet.getTimestamp("dt_consulta"));
@@ -99,7 +102,7 @@ public class AssessorPacienteDto {
 		}
 		
 		
-		return paciente;
+		return pacientes;
 	}
 
 }
