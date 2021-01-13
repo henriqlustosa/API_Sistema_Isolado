@@ -7,18 +7,123 @@ import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import censo.model.Paciente;
 import censo.persistence.Conexao;
 
 public class AssessorPacienteDto {
-	public static ArrayList<Paciente> paciente(int codigoDoRH, String nome,String mae ,int CPF,int CNS, String dataDeNascimento,String logradouro, int numero, String bairro, int RF, String status) {
+	public static ArrayList<Paciente> paciente(String codigoDoRH, String nome,String mae ,String CPF,String CNS, String dataDeNascimento,String logradouro, String numero, String bairro, String RF, String status) {
 		ArrayList<Paciente> pacientes = new ArrayList<Paciente>();
 		Paciente paciente = new Paciente();
 		PreparedStatement preparedStatement;
+		
+		
+		String strSql ="SELECT * FROM agh.v_paciente where ";
 		try {
+		
+			Map<String, String> dictionary = new HashMap<String, String>();
+			dictionary.put("cd_prontuario", codigoDoRH);
+			dictionary.put("nm_nome", nome);
+			dictionary.put("nm_mae", mae);
+			dictionary.put("nr_cpf", CPF);
+			dictionary.put("nr_cartao_saude", CNS);
+			dictionary.put("dt_data_nascimento", dataDeNascimento);
+			dictionary.put("dc_logradouro", logradouro);
+			dictionary.put("nr_logradouro", numero);
+			dictionary.put("dc_bairro", bairro);
+			dictionary.put("cd_rf_matricula", RF);
+			dictionary.put("nm_situacao", status);
 			
-			String sqlString = "SELECT * FROM agh.v_paciente where cd_prontuario =" + codigoDoRH + " and nm_nome like '" + nome + "%' and nm_mae like '" + mae + "%' and nr_cpf ="+ CPF +" and nr_cartao_saude = "+ CNS +" and dt_data_nascimento = '"+ dataDeNascimento +"' and dc_logradouro like '" + logradouro + "%' and nr_logradouro =" + numero +" and dc_bairro like '" + bairro +"%' and cd_rf_matricula = '" +  RF + "' and nm_situacao ='"+ status +"'";
+			int  count = 0;
+			
+			   for (Map.Entry<String, String> entry : dictionary.entrySet()) { 
+				   
+				   
+				   
+				    if(entry.getValue() != null) {
+				    	
+				    	    
+				    		count += 1;
+				    		
+				    		if(entry.getKey() == "nm_nome" )
+				    		{
+				    			String _nome  = entry.getValue();
+				    			
+				    			_nome = _nome + "%";
+				    			_nome = _nome.replace("\'", "");
+				    			if(count == 1 ) {
+					    			strSql = strSql.concat( entry.getKey() + " like '" + _nome + "'");
+					    		}
+					    		else
+					    		{
+					    			strSql = strSql.concat(" and "  + entry.getKey() + " like '" + _nome + "'");
+					    		}
+				    			 continue;
+				    		}
+				    		if(entry.getKey() == "nm_mae" )
+				    		{
+				    			String _nome  = entry.getValue();
+				    			
+				    			_nome = _nome + "%";
+				    			_nome = _nome.replace("\'", "");
+				    			if(count == 1 ) {
+					    			strSql = strSql.concat( entry.getKey() + " like '" + _nome + "'");
+					    		}
+					    		else
+					    		{
+					    			strSql = strSql.concat(" and "  + entry.getKey() + " like '" + _nome + "'");
+					    		}
+				    			 continue;
+				    		}
+				    		
+				    		if(entry.getKey() == "dc_logradouro" )
+				    		{
+				    			String _nome  = entry.getValue();
+				    			
+				    			_nome = _nome + "%";
+				    			_nome = _nome.replace("\'", "");
+				    			if(count == 1 ) {
+					    			strSql = strSql.concat( entry.getKey() + " like '" + _nome + "'");
+					    		}
+					    		else
+					    		{
+					    			strSql = strSql.concat(" and "  + entry.getKey() + " like '" + _nome + "'");
+					    		}
+				    			 continue;
+				    		}
+				    		
+				    		if(entry.getKey() == "dc_bairro" )
+				    		{
+				    			String _nome  = entry.getValue();
+				    			
+				    			_nome = _nome + "%";
+				    			_nome = _nome.replace("\'", "");
+				    			if(count == 1 ) {
+					    			strSql = strSql.concat( entry.getKey() + " like '" + _nome + "'");
+					    		}
+					    		else
+					    		{
+					    			strSql = strSql.concat(" and "  + entry.getKey() + " like '" + _nome + "'");
+					    		}
+				    			 continue;
+				    		}
+				    		if(count == 1 ) {
+				    			strSql = strSql.concat( entry.getKey() + " = " + entry.getValue());
+				    		}
+				    		else
+				    		{
+				    			strSql = strSql.concat(" and "  + entry.getKey() + " = " + entry.getValue());
+				    		}
+				    		
+				    		
+				    		
+				    }
+			    }
+		
+		     count = 0;
+			String sqlString = strSql;
 			Connection conn = new Conexao().getConnection();
 			preparedStatement = conn.prepareStatement(sqlString);
 			ResultSet resultSet = preparedStatement.executeQuery();
