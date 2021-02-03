@@ -12,14 +12,14 @@ import censo.controller.dto.AssessorImportacaoDto;
 
 import censo.model.Paciente;
 @RestController
-@RequestMapping("/hspmsgh-api/assessor/paciente")
+@RequestMapping("/hspmsgh-api/assessor/importacao")
 
 public class AssessorImportacaoController {
 	@CrossOrigin(origins="*")
 	@GetMapping()
-	public ResponseEntity<List<Paciente>> getAssessorImportacao(String codigoIncial, String codigoFinal,String dataAlteracao){
+	public ResponseEntity<List<Paciente>> getAssessorImportacao(String codigoInicial, String codigoFinal,String dataAlteracao){
 		
-		List<Paciente> pacientes = AssessorImportacaoDto.paciente(codigoIncial, codigoFinal, dataAlteracao);	
+		List<Paciente> pacientes = AssessorImportacaoDto.paciente(codigoInicial, codigoFinal, dataAlteracao);	
 		
 		//if(paciente.getCd_prontuario() == null) {
 			//return ResponseEntity.notFound().build();			

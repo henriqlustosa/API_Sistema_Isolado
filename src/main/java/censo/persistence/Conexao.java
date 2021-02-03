@@ -8,7 +8,7 @@ public class Conexao {
 	public Connection getConnection() {
 		
 		
-		String url = "jdbc:postgresql://10.10.73.14:6433/hm0615_hspm";
+		String url = "jdbc:postgresql://pg019dbsrv.prodam:5432/hm0615_hspm";
 		String usuario = "hm0615_hspm";
 		String senha = "pwd_hm0615_hspm";
 

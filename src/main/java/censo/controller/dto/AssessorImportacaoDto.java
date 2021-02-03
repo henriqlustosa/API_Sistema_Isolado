@@ -14,107 +14,25 @@ import censo.model.Paciente;
 import censo.persistence.Conexao;
 
 public class AssessorImportacaoDto {
-	public static ArrayList<Paciente> paciente(String codigoIncial, String codigoFinal,String dataAlteracao) {
+	public static ArrayList<Paciente> paciente(String codigoInicial, String codigoFinal,String dataAlteracao) {
 		ArrayList<Paciente> pacientes = new ArrayList<Paciente>();
 		Paciente paciente = new Paciente();
 		PreparedStatement preparedStatement;
 		
 		
-		String strSql ="SELECT * FROM agh.v_paciente where ";
+		String strSql ="SELECT * FROM agh.v_paciente where cd_prontuario between  " + codigoInicial + " and " + codigoFinal ;
 		try {
 		
-			Map<String, String> dictionary = new HashMap<String, String>();
-			dictionary.put("cd_prontuario", codigoIncial);
-			dictionary.put("nm_nome", codigoFinal);
-			dictionary.put("nm_mae", dataAlteracao);
-		
-			int  count = 0;
-			
-			   for (Map.Entry<String, String> entry : dictionary.entrySet()) { 
+			if(dataAlteracao != null )
+			{
+				   
+				strSql = strSql.concat( "and  " + " like '" + dataAlteracao + "'");  
 				   
 				   
-				   
-				    if(entry.getValue() != null) {
 				    	
-				    	    
-				    		count += 1;
-				    		
-				    		if(entry.getKey() == "nm_nome" )
-				    		{
-				    			String _nome  = entry.getValue();
-				    			
-				    			_nome = _nome + "%";
-				    			_nome = _nome.replace("\'", "");
-				    			if(count == 1 ) {
-					    			strSql = strSql.concat( entry.getKey() + " like '" + _nome + "'");
-					    		}
-					    		else
-					    		{
-					    			strSql = strSql.concat(" and "  + entry.getKey() + " like '" + _nome + "'");
-					    		}
-				    			 continue;
-				    		}
-				    		if(entry.getKey() == "nm_mae" )
-				    		{
-				    			String _nome  = entry.getValue();
-				    			
-				    			_nome = _nome + "%";
-				    			_nome = _nome.replace("\'", "");
-				    			if(count == 1 ) {
-					    			strSql = strSql.concat( entry.getKey() + " like '" + _nome + "'");
-					    		}
-					    		else
-					    		{
-					    			strSql = strSql.concat(" and "  + entry.getKey() + " like '" + _nome + "'");
-					    		}
-				    			 continue;
-				    		}
-				    		
-				    		if(entry.getKey() == "dc_logradouro" )
-				    		{
-				    			String _nome  = entry.getValue();
-				    			
-				    			_nome = _nome + "%";
-				    			_nome = _nome.replace("\'", "");
-				    			if(count == 1 ) {
-					    			strSql = strSql.concat( entry.getKey() + " like '" + _nome + "'");
-					    		}
-					    		else
-					    		{
-					    			strSql = strSql.concat(" and "  + entry.getKey() + " like '" + _nome + "'");
-					    		}
-				    			 continue;
-				    		}
-				    		
-				    		if(entry.getKey() == "dc_bairro" )
-				    		{
-				    			String _nome  = entry.getValue();
-				    			
-				    			_nome = _nome + "%";
-				    			_nome = _nome.replace("\'", "");
-				    			if(count == 1 ) {
-					    			strSql = strSql.concat( entry.getKey() + " like '" + _nome + "'");
-					    		}
-					    		else
-					    		{
-					    			strSql = strSql.concat(" and "  + entry.getKey() + " like '" + _nome + "'");
-					    		}
-				    			 continue;
-				    		}
-				    		if(count == 1 ) {
-				    			strSql = strSql.concat( entry.getKey() + " = " + entry.getValue());
-				    		}
-				    		else
-				    		{
-				    			strSql = strSql.concat(" and "  + entry.getKey() + " = " + entry.getValue());
-				    		}
-				    		
-				    		
-				    		
-				    }
-			    }
+			}
 		
-		     count = 0;
+
 			String sqlString = strSql;
 			Connection conn = new Conexao().getConnection();
 			preparedStatement = conn.prepareStatement(sqlString);
