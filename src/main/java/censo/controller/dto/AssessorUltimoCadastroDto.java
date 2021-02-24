@@ -17,9 +17,9 @@ public class AssessorUltimoCadastroDto {
 		
 		
 		String strSql ="select t.*\r\n" + 
-				"from (select agh.aip_pacientes.*,\r\n" + 
+				"from (select agh.v_paciente.*,\r\n" + 
 				"             row_number() over (order by dt_recadastro desc) as seqnum\r\n" + 
-				"      from agh.aip_pacientes where dt_recadastro is not null\r\n" + 
+				"      from agh.v_paciente where dt_recadastro is not null\r\n" + 
 				"     ) t\r\n" + 
 				"where seqnum = 1;";
 		try {
@@ -96,6 +96,7 @@ public class AssessorUltimoCadastroDto {
 				paciente.setDdd_fone_comercial(resultSet.getString("ddd_fone_comercial"));
 				paciente.setFone_comercial(resultSet.getString("fone_comercial"));
 				paciente.setEmail(resultSet.getString("email"));
+				//paciente.setDt_recadastro(resultSet.getString("dt_recadastro"));
 				//pacientes.add(paciente);
 				
 						

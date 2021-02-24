@@ -195,6 +195,7 @@ public class AssessorPacienteDto {
 				paciente.setDdd_fone_comercial(resultSet.getString("ddd_fone_comercial"));
 				paciente.setFone_comercial(resultSet.getString("fone_comercial"));
 				paciente.setEmail(resultSet.getString("email"));
+				//paciente.setDt_recadastro(resultSet.getString("dt_recadastro"));
 				pacientes.add(paciente);
 				
 				//DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");

@@ -25,12 +25,12 @@ public class AssessorPessoaServidorDto {
 		if(CPF.contentEquals("0"))
 		{
 			sqlString = "SELECT pes_codigo, ser_vin_codigo, ser_matricula, vin_descricao, nome, dt_nascimento, dt_fim_vinculo, nome_usual, sexo, oca_car_codigo, oca_codigo, cct_codigo, cct_codigo_atua, ind_situacao, fone_celular, fone_residencial, fone_pager_bip, dt_inicio_vinculo, turno, ram_nro_ramal, cpf, cct_codigo_desempenho\r\n" + 
-					"	FROM agh.v_rap_pessoa_servidor " ;
+					"	,nm_mae, nm_pai FROM agh.v_rap_pessoa_servidor " ;
 		}
 		else
 		{
 		sqlString = "SELECT pes_codigo, ser_vin_codigo, ser_matricula, vin_descricao, nome, dt_nascimento, dt_fim_vinculo, nome_usual, sexo, oca_car_codigo, oca_codigo, cct_codigo, cct_codigo_atua, ind_situacao, fone_celular, fone_residencial, fone_pager_bip, dt_inicio_vinculo, turno, ram_nro_ramal, cpf, cct_codigo_desempenho\r\n" + 
-				"	FROM agh.v_rap_pessoa_servidor where cpf = " + CPF + " ;" ;
+				" ,nm_mae, nm_pai FROM agh.v_rap_pessoa_servidor where cpf = " + CPF + " ;" ;
 		}
 		try {
 			
@@ -51,8 +51,8 @@ public class AssessorPessoaServidorDto {
 				profissional.setMatricula(resultSet.getString("ser_matricula"));
 				profissional.setSexo(resultSet.getString("sexo"));
 				profissional.setDt_nascimento(resultSet.getString("dt_nascimento"));
-				profissional.setMae(resultSet.getString("ser_matricula"));
-				profissional.setPai(resultSet.getString("vin_descricao"));
+				profissional.setMae(resultSet.getString("nm_mae"));
+				profissional.setPai(resultSet.getString("nm_pai"));
 				
 				
 				profissionais.add(profissional);

@@ -15,6 +15,7 @@ C:\Users\h013026\OneDrive - Default Directory\Workspce_API_JAVA\censo\src\main\j
 C:\Users\h013026\OneDrive - Default Directory\Workspce_API_JAVA\censo\src\main\java\censo\controller\dto\InternacaPacienteDto.java
 C:\Users\h013026\OneDrive - Default Directory\Workspce_API_JAVA\censo\src\main\java\censo\controller\dto\CensoDto.java
 C:\Users\h013026\OneDrive - Default Directory\Workspce_API_JAVA\censo\src\main\java\censo\config\validacao\ErroDeValidacaoHandler.java
+C:\Users\h013026\OneDrive - Default Directory\Workspce_API_JAVA\censo\src\main\java\censo\controller\AssessorUltimoCadastroController.java
 C:\Users\h013026\OneDrive - Default Directory\Workspce_API_JAVA\censo\src\main\java\censo\model\Paciente.java
 C:\Users\h013026\OneDrive - Default Directory\Workspce_API_JAVA\censo\src\main\java\censo\controller\AssessorPessoaServidorController.java
 C:\Users\h013026\OneDrive - Default Directory\Workspce_API_JAVA\censo\src\main\java\censo\controller\ExtratoController.java
@@ -23,4 +24,5 @@ C:\Users\h013026\OneDrive - Default Directory\Workspce_API_JAVA\censo\src\main\j
 C:\Users\h013026\OneDrive - Default Directory\Workspce_API_JAVA\censo\src\main\java\censo\controller\dto\ExtratoDto.java
 C:\Users\h013026\OneDrive - Default Directory\Workspce_API_JAVA\censo\src\main\java\censo\controller\AssessorPacienteController.java
 C:\Users\h013026\OneDrive - Default Directory\Workspce_API_JAVA\censo\src\main\java\censo\model\PessoaServidor.java
+C:\Users\h013026\OneDrive - Default Directory\Workspce_API_JAVA\censo\src\main\java\censo\controller\dto\AssessorUltimoCadastroDto.java
 C:\Users\h013026\OneDrive - Default Directory\Workspce_API_JAVA\censo\src\main\java\censo\controller\dto\PacienteDto.java

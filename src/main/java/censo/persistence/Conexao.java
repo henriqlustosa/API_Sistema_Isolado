@@ -8,13 +8,19 @@ public class Conexao {
 	public Connection getConnection() {
 		
 		
-		String url = "jdbc:postgresql://pg019dbsrv.prodam:5432/hm0615_hspm";
-		String usuario = "hm0615_hspm";
-		String senha = "pwd_hm0615_hspm";
+		//String url = "jdbc:postgresql://pg019dbsrv.prodam:5432/hm0615_hspm";
+		//String usuario = "hm0615_hspm";
+		//String senha = "pwd_hm0615_hspm";
+		
 
-		//String url = "jdbc:postgresql://10.10.68.39:6432/hm0615_hspm";
-		//String usuario = "hspm_acesso";
-		//String senha = "pwd_hspm_acesso";
+        //String url = "jdbc:postgresql://pg017dbsrv.prodam:5432/hm0615_hspm";
+        //String usuario = "hspm_acesso";
+        //String senha = "pwd_hspm_acesso";
+
+
+		String url = "jdbc:postgresql://10.10.68.39:6432/hm0615_hspm";
+		String usuario = "hspm_acesso";
+		String senha = "pwd_hspm_acesso";
 
 		Connection result = null;
 		try {
