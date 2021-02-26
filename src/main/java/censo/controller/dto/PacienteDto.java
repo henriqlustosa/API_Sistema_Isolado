@@ -88,7 +88,7 @@ public class PacienteDto {
 				paciente.setDdd_fone_comercial(resultSet.getString("ddd_fone_comercial"));
 				paciente.setFone_comercial(resultSet.getString("fone_comercial"));
 				paciente.setEmail(resultSet.getString("email"));
-				//paciente.setDt_recadastro(resultSet.getString("dt_recadastro"));
+				paciente.setDt_recadastro(resultSet.getString("dt_recadastro"));
 				
 				//DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 				//String dt_consulta = dateFormat.format(resultSet.getTimestamp("dt_consulta"));

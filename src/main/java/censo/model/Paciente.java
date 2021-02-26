@@ -64,7 +64,7 @@ public class Paciente {
 	private String ddd_fone_comercial; 
 	private String fone_comercial;
 	private String email;
-	//private String dt_recadastro;
+	private String dt_recadastro;
 	
 	
 	
@@ -468,7 +468,7 @@ public class Paciente {
 		result = prime * result + ((ddd_fone_comercial == null) ? 0 : ddd_fone_comercial.hashCode());
 		result = prime * result + ((fone_comercial == null) ? 0 : fone_comercial.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		//result = prime * result + ((dt_recadastro == null) ? 0 : dt_recadastro.hashCode());
+		result = prime * result + ((dt_recadastro == null) ? 0 : dt_recadastro.hashCode());
 		return result;
 	}
 	@Override
@@ -795,11 +795,11 @@ public class Paciente {
 				return false;
 		} else if (!email.equals(other.email))
 			return false;
-		/*if (dt_recadastro == null) {
+		if (dt_recadastro == null) {
 			if (other.dt_recadastro != null)
 				return false;
 		} else if (!dt_recadastro.equals(other.dt_recadastro))
-			return false;*/
+			return false;
 		
 		return true;
 	}
@@ -851,10 +851,10 @@ public class Paciente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	/*public String getDt_recadastro() {
+	public String getDt_recadastro() {
 		return dt_recadastro;
 	}
 	public void setDt_recadastro(String dt_recadastro) {
 		this.dt_recadastro = dt_recadastro;
-	}*/
+	}
 }

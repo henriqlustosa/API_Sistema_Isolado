@@ -16,7 +16,7 @@ import censo.persistence.Conexao;
 public class AssessorPacienteDto {
 	public static ArrayList<Paciente> paciente(String codigoDoRH, String nome,String mae ,String CPF,String CNS, String dataDeNascimento,String logradouro, String numero, String bairro, String RF, String status) {
 		ArrayList<Paciente> pacientes = new ArrayList<Paciente>();
-		Paciente paciente = new Paciente();
+	
 		PreparedStatement preparedStatement;
 		
 		
@@ -128,7 +128,11 @@ public class AssessorPacienteDto {
 			preparedStatement = conn.prepareStatement(sqlString);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			
-			if (resultSet.next()) {
+			while (resultSet.next()) {
+				
+				Paciente paciente = new Paciente();
+				
+				
 				DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 				paciente.setCd_prontuario(resultSet.getLong("cd_prontuario"));
 				paciente.setNm_situacao(resultSet.getString("nm_situacao"));
@@ -195,7 +199,7 @@ public class AssessorPacienteDto {
 				paciente.setDdd_fone_comercial(resultSet.getString("ddd_fone_comercial"));
 				paciente.setFone_comercial(resultSet.getString("fone_comercial"));
 				paciente.setEmail(resultSet.getString("email"));
-				//paciente.setDt_recadastro(resultSet.getString("dt_recadastro"));
+				paciente.setDt_recadastro(resultSet.getString("dt_recadastro"));
 				pacientes.add(paciente);
 				
 				//DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");

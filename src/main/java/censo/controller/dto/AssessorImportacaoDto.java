@@ -15,7 +15,7 @@ import censo.persistence.Conexao;
 public class AssessorImportacaoDto {
 	public static ArrayList<Paciente> paciente(String codigoInicial, String codigoFinal,String dataAlteracao) {
 		ArrayList<Paciente> pacientes = new ArrayList<Paciente>();
-		Paciente paciente = new Paciente();
+	
 		PreparedStatement preparedStatement;
 		
 		
@@ -25,7 +25,7 @@ public class AssessorImportacaoDto {
 			if(dataAlteracao != null )
 			{
 				   
-				strSql = strSql.concat( "and  " + " like '" + dataAlteracao + "'");  
+				strSql = strSql.concat( "and dt_recadastro " + " >= '" + dataAlteracao + "'");  
 				   
 				   
 				    	
@@ -37,7 +37,10 @@ public class AssessorImportacaoDto {
 			preparedStatement = conn.prepareStatement(sqlString);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			
-			if (resultSet.next()) {
+			while (resultSet.next()) {
+				
+				Paciente paciente = new Paciente();
+				
 				DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 				paciente.setCd_prontuario(resultSet.getLong("cd_prontuario"));
 				paciente.setNm_situacao(resultSet.getString("nm_situacao"));
@@ -104,7 +107,7 @@ public class AssessorImportacaoDto {
 				paciente.setDdd_fone_comercial(resultSet.getString("ddd_fone_comercial"));
 				paciente.setFone_comercial(resultSet.getString("fone_comercial"));
 				paciente.setEmail(resultSet.getString("email"));
-				//paciente.setDt_recadastro(resultSet.getString("dt_recadastro"));
+				paciente.setDt_recadastro(resultSet.getString("dt_recadastro"));
 				pacientes.add(paciente);
 				
 				//DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm");
