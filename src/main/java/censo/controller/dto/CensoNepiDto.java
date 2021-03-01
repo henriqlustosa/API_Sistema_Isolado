@@ -41,10 +41,12 @@ public class CensoNepiDto {
 				censo.setNm_medico(resultSet.getString("medico"));
 				censo.setDt_ultimo_evento_data(resultSet.getString("data_de_movimentacao_data"));
 				censo.setDt_ultimo_evento_hora(resultSet.getString("data_de_movimentacao_hora"));
+				censo.setNm_origem(resultSet.getString("origem"));
+				censo.setNr_convenio(resultSet.getString("convênio"));
 				censo.setIn_sexo(resultSet.getString("sexo"));
-				censo.setNr_idade(resultSet.getInt( "idade"));
-				censo.setCod_CID(resultSet.getString("cid"));
-				censo.setDescricaoCID(resultSet.getString("descricao"));
+				censo.setNr_idade(resultSet.getInt( "Idade"));
+				censo.setCod_CID(resultSet.getString("CID"));
+				censo.setDescricaoCID(resultSet.getString("Descrição do CID"));
 				censo.setNm_unidade_funcional(resultSet.getString("unidade_funcional"));
 				censo.setTempo(resultSet.getString("tempo"));
 				censo.setVinculo(resultSet.getString("vinculo"));

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import censo.controller.dto.CensoDto;
+import censo.controller.dto.CensoNepiDto;
 import censo.model.Censo;
 
 
@@ -18,7 +18,7 @@ public class CensoNepiController {
 	@GetMapping("/")
 	ResponseEntity<List<Censo>> getCensos(){
 		
-		List<Censo> censos = CensoDto.Censos();
+		List<Censo> censos = CensoNepiDto.Censos();
 		
 		
 		if(censos == null) {

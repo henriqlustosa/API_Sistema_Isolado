@@ -1,10 +1,12 @@
 censo\controller\AssessorImportacaoController.class
 censo\controller\AssessorPessoaServidorController.class
+censo\controller\CensoNepiController.class
 censo\controller\dto\AssessorPessoaServidorDto.class
 censo\model\Censo.class
 censo\persistence\Conexao.class
 censo\config\validacao\ErroDeFormulario.class
 censo\controller\dto\InternacaPacienteDto.class
+censo\controller\dto\CensoNepiDto.class
 censo\controller\dto\ExtratoDto.class
 censo\controller\dto\CensoPacienteDto.class
 censo\CensoApplication.class
