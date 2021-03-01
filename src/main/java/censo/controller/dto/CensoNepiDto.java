@@ -1,15 +1,16 @@
 package censo.controller.dto;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 import censo.model.Censo;
 import censo.persistence.Conexao;
 
-public class CensoDto {
-
+public class CensoNepiDto {
 	public static final List<Censo> Censos = null;
 
 	public static ArrayList<Censo> Censos() {
@@ -17,9 +18,7 @@ public class CensoDto {
 		ArrayList<Censo> censos = new ArrayList<Censo>();
 		PreparedStatement preparedStatement;
 
-		String sqlString = "SELECT prontuario, nome, nascimento, quarto, data_internacao_data, data_internacao_hora, \r\n" + 
-				"       especialidade, sexo, \"Idade\" as idade, \"CID\" as cid, \"Descrição do CID\" as descricao, unidade_funcional, tempo, vinculo\r\n" + 
-				"  FROM agh.v_ain_censo_24_horas where data_internacao_data != '' ;";
+		String sqlString = "SELECT * FROM agh.v_ain_censo_24_horas;";
 
 		try {
 
@@ -39,6 +38,9 @@ public class CensoDto {
 				censo.setDt_internacao_data(resultSet.getString("data_internacao_data"));
 				censo.setDt_internacao_hora(resultSet.getString("data_internacao_hora"));
 				censo.setNm_especialidade(resultSet.getString("especialidade"));
+				censo.setNm_medico(resultSet.getString("medico"));
+				censo.setDt_ultimo_evento_data(resultSet.getString("data_de_movimentacao_data"));
+				censo.setDt_ultimo_evento_hora(resultSet.getString("data_de_movimentacao_hora"));
 				censo.setIn_sexo(resultSet.getString("sexo"));
 				censo.setNr_idade(resultSet.getInt( "idade"));
 				censo.setCod_CID(resultSet.getString("cid"));
@@ -58,6 +60,5 @@ public class CensoDto {
 
 		return censos ;
 	}
-	
 
 }

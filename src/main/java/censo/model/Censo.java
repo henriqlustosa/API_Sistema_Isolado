@@ -13,7 +13,12 @@ public class Censo {
 	private String nr_quarto;
 	private String dt_internacao_data;
 	private String dt_internacao_hora;
-	private String nm_clinica;
+	private String nm_especialidade;
+	private String nm_medico;
+	private String dt_ultimo_evento_data;
+	private String dt_ultimo_evento_hora;
+	private String nm_origem;
+	private String nr_convenio;
 	private String in_sexo;
 	private Integer nr_idade;
 	private String cod_CID;
@@ -56,12 +61,6 @@ public class Censo {
 		this.nr_quarto = nr_quarto;
 	}
 
-	public String getNm_clinica() {
-		return nm_clinica;
-	}
-	public void setNm_clinica(String nm_clinica) {
-		this.nm_clinica = nm_clinica;
-	}
 
 
 
@@ -81,8 +80,18 @@ public class Censo {
 		
 		result = prime * result + ((dt_internacao_hora == null) ? 0 : dt_internacao_hora.hashCode());
 		
-		result = prime * result + ((nm_clinica == null) ? 0 : nm_clinica.hashCode());
-	
+		result = prime * result + ((nm_especialidade == null) ? 0 : nm_especialidade.hashCode());
+		
+		result = prime * result + ((nm_medico == null) ? 0 : nm_medico.hashCode());
+		
+		result = prime * result + ((dt_ultimo_evento_data == null) ? 0 : dt_ultimo_evento_data.hashCode());
+		
+		result = prime * result + ((dt_ultimo_evento_hora == null) ? 0 : dt_ultimo_evento_hora.hashCode());
+		
+		result = prime * result + ((nm_origem == null) ? 0 : nm_origem.hashCode());
+		
+		result = prime * result + ((nr_convenio == null) ? 0 : nr_convenio.hashCode());
+		
 		result = prime * result + ((in_sexo == null) ? 0 : in_sexo.hashCode());
 		
 		result = prime * result + ((nr_idade == null) ? 0 : nr_idade.hashCode());
@@ -110,7 +119,9 @@ public class Censo {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
+		
 		Censo other = (Censo) obj;
+		
 		if (cd_prontuario == null) {
 			if (other.cd_prontuario != null)
 				return false;
@@ -142,16 +153,47 @@ public class Censo {
 				return false;
 		} else if (!dt_internacao_data.equals(other.dt_internacao_data))
 			return false;
+		
 		if (dt_internacao_hora == null) {
 			if (other.dt_internacao_hora != null)
 				return false;
 		} else if (!dt_internacao_hora.equals(other.dt_internacao_hora))
 			return false;
 
-		if (nm_clinica == null) {
-			if (other.nm_clinica != null)
+		if (nm_especialidade == null) {
+			if (other.nm_especialidade != null)
 				return false;
-		} else if (!nm_clinica.equals(other.nm_clinica))
+		} else if (!nm_especialidade.equals(other.nm_especialidade))
+			return false;
+		
+		if (nm_medico == null) {
+			if (other.nm_medico != null)
+				return false;
+		} else if (!nm_medico.equals(other.nm_medico))
+			return false;
+		
+		if (dt_ultimo_evento_data == null) {
+			if (other.dt_ultimo_evento_data != null)
+				return false;
+		} else if (!dt_ultimo_evento_data.equals(other.dt_ultimo_evento_data))
+			return false;
+		
+		if (dt_ultimo_evento_hora == null) {
+			if (other.dt_ultimo_evento_hora != null)
+				return false;
+		} else if (!dt_ultimo_evento_hora.equals(other.dt_ultimo_evento_hora))
+			return false;
+		
+		if (nm_origem == null) {
+			if (other.nm_origem != null)
+				return false;
+		} else if (!nm_origem.equals(other.nm_origem))
+			return false;
+		
+		if (nr_convenio == null) {
+			if (other.nr_convenio != null)
+				return false;
+		} else if (!nr_convenio.equals(other.nr_convenio))
 			return false;
 		
 		
@@ -253,6 +295,42 @@ public class Censo {
 	}
 	public void setDt_internacao_hora(String dt_internacao_hora) {
 		this.dt_internacao_hora = dt_internacao_hora;
+	}
+	public String getNm_especialidade() {
+		return nm_especialidade;
+	}
+	public void setNm_especialidade(String nm_especialidade) {
+		this.nm_especialidade = nm_especialidade;
+	}
+	public String getNm_medico() {
+		return nm_medico;
+	}
+	public void setNm_medico(String nm_medico) {
+		this.nm_medico = nm_medico;
+	}
+	public String getDt_ultimo_evento_data() {
+		return dt_ultimo_evento_data;
+	}
+	public void setDt_ultimo_evento_data(String dt_ultimo_evento_data) {
+		this.dt_ultimo_evento_data = dt_ultimo_evento_data;
+	}
+	public String getDt_ultimo_evento_hora() {
+		return dt_ultimo_evento_hora;
+	}
+	public void setDt_ultimo_evento_hora(String dt_ultimo_evento_hora) {
+		this.dt_ultimo_evento_hora = dt_ultimo_evento_hora;
+	}
+	public String getNr_convenio() {
+		return nr_convenio;
+	}
+	public void setNr_convenio(String nr_convenio) {
+		this.nr_convenio = nr_convenio;
+	}
+	public String getNm_origem() {
+		return nm_origem;
+	}
+	public void setNm_origem(String nm_origem) {
+		this.nm_origem = nm_origem;
 	}
 
 

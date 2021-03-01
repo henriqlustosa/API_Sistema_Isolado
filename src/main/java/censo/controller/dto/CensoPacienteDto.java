@@ -38,7 +38,7 @@ public class CensoPacienteDto{
 				censo.setNr_quarto(resultSet.getString("quarto"));
 				censo.setDt_internacao_data(resultSet.getString("data_internacao_data"));
 				censo.setDt_internacao_hora(resultSet.getString("data_internacao_hora"));
-				censo.setNm_clinica(resultSet.getString("especialidade"));
+				censo.setNm_especialidade(resultSet.getString("especialidade"));
 				censo.setIn_sexo(resultSet.getString("sexo"));
 				censo.setNr_idade(resultSet.getInt( "idade"));
 				censo.setCod_CID(resultSet.getString("cid"));
