@@ -18,7 +18,7 @@ public class CensoDto {
 		PreparedStatement preparedStatement;
 
 		String sqlString = "SELECT prontuario, nome, nascimento, quarto, data_internacao_data, data_internacao_hora, \r\n" + 
-				"       especialidade, sexo, \"Idade\" as idade, \"CID\" as cid, \"Descrição do CID\" as descricao, unidade_funcional, tempo, vinculo\r\n" + 
+				"       especialidade, medico,data_de_movimentacao_data, data_de_movimentacao_hora,origem, convênio, sexo, \"Idade\" as idade, \"CID\" as cid, \"Descrição do CID\" as descricao, unidade_funcional, tempo, vinculo\r\n" + 
 				"  FROM agh.v_ain_censo_24_horas where data_internacao_data != '' ;";
 
 		try {
@@ -39,6 +39,11 @@ public class CensoDto {
 				censo.setDt_internacao_data(resultSet.getString("data_internacao_data"));
 				censo.setDt_internacao_hora(resultSet.getString("data_internacao_hora"));
 				censo.setNm_especialidade(resultSet.getString("especialidade"));
+				censo.setNm_medico(resultSet.getString("medico"));
+				censo.setDt_ultimo_evento_data(resultSet.getString("data_de_movimentacao_data"));
+				censo.setDt_ultimo_evento_hora(resultSet.getString("data_de_movimentacao_hora"));
+				censo.setNm_origem(resultSet.getString("origem"));
+				censo.setNr_convenio(resultSet.getString("convênio"));
 				censo.setIn_sexo(resultSet.getString("sexo"));
 				censo.setNr_idade(resultSet.getInt( "idade"));
 				censo.setCod_CID(resultSet.getString("cid"));

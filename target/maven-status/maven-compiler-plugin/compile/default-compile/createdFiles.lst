@@ -4,6 +4,7 @@ censo\controller\CensoNepiController.class
 censo\controller\dto\AssessorPessoaServidorDto.class
 censo\model\Censo.class
 censo\persistence\Conexao.class
+censo\controller\AssessorUltimoCadastroInseridoController.class
 censo\config\validacao\ErroDeFormulario.class
 censo\controller\dto\InternacaPacienteDto.class
 censo\controller\dto\CensoNepiDto.class
@@ -20,11 +21,15 @@ censo\model\Paciente.class
 censo\model\Internacao.class
 censo\controller\dto\PacienteDto.class
 censo\controller\dto\AssessorUltimoCadastroDto.class
+censo\controller\dto\AssessorUltimoCadastroInseridoDto.class
+censo\controller\dto\AssessorCodigoLeitoDto.class
 censo\controller\CensoController.class
+censo\controller\AssessorCodigoLeitoController.class
 censo\controller\AssessorUltimoCadastroController.class
 censo\model\Extrato.class
 censo\controller\AssessorPacienteController.class
 censo\controller\dto\CensoDto.class
+censo\model\Codigo.class
 censo\controller\PacienteCensoController.class
 censo\model\PessoaServidor.class
 censo\config\validacao\ErroDeValidacaoHandler.class
