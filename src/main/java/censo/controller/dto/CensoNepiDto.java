@@ -48,7 +48,7 @@ public class CensoNepiDto {
 				censo.setCod_CID(resultSet.getString("CID"));
 				censo.setDescricaoCID(resultSet.getString("Descrição do CID"));
 				censo.setNm_unidade_funcional(resultSet.getString("unidade_funcional"));
-				censo.setTempo(resultSet.getString("tempo"));
+				censo.setTempo(resultSet.getString("tempo") == null ? null : resultSet.getString("tempo").replace("days", "").replace("day", "").replace("00:00:00", "0"));
 				censo.setVinculo(resultSet.getString("vinculo"));
 			
 				censos.add(censo);
@@ -63,4 +63,6 @@ public class CensoNepiDto {
 		return censos ;
 	}
 
+
 }
+

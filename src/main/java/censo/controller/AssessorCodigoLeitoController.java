@@ -12,7 +12,7 @@ import censo.controller.dto.AssessorCodigoLeitoDto;
 import censo.model.Codigo;
 
 @RestController
-@RequestMapping("/hspmsgh-api/codigoLeito")
+@RequestMapping("/hspmsgh-api/assessor/codigoLeito")
 
 public class AssessorCodigoLeitoController {
 	@CrossOrigin(origins="*")

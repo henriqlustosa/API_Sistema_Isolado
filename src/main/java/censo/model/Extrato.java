@@ -11,6 +11,10 @@ public class Extrato {
 	private String nr_leito;
 	private String nr_quarto;
 	private String nm_unidade_funcional;
+	private String nr_int_seq;
+	private String nr_seq;
+	private String dc_origem;
+	
 	
 
 
@@ -48,7 +52,14 @@ public class Extrato {
 		result = prime * result + ((nr_leito == null) ? 0 : nr_leito.hashCode());
 		
 		result = prime * result + ((nr_quarto == null) ? 0 : nr_quarto.hashCode());
+		
 		result = prime * result + ((nm_unidade_funcional == null) ? 0 : nm_unidade_funcional.hashCode());
+		
+		result = prime * result + ((nr_int_seq == null) ? 0 : nr_int_seq.hashCode());
+		
+		result = prime * result + ((nr_seq == null) ? 0 : nr_seq.hashCode());
+		
+		result = prime * result + ((dc_origem == null) ? 0 : dc_origem.hashCode());
 	
 		
 		return result;
@@ -110,6 +121,24 @@ public class Extrato {
 		} else if (!nm_unidade_funcional.equals(other.nm_unidade_funcional))
 			return false;
 		
+		 if(nr_int_seq == null) {
+				if (other.nr_int_seq != null)
+					return false;
+			} else if (!nr_int_seq.equals(other.nr_int_seq))
+				return false;
+		
+		 if(nr_seq == null) {
+				if (other.nr_seq != null)
+					return false;
+			} else if (!nr_seq.equals(other.nr_seq))
+				return false;
+		
+		 if(dc_origem == null) {
+				if (other.dc_origem != null)
+					return false;
+			} else if (!dc_origem.equals(other.dc_origem))
+				return false;
+		
 		
 	
 		
@@ -152,6 +181,24 @@ public class Extrato {
 	}
 	public void setNr_quarto(String nr_quarto) {
 		this.nr_quarto = nr_quarto;
+	}
+	public String getDc_origem() {
+		return dc_origem;
+	}
+	public void setDc_origem(String dc_origem) {
+		this.dc_origem = dc_origem;
+	}
+	public String getNr_seq() {
+		return nr_seq;
+	}
+	public void setNr_seq(String nr_seq) {
+		this.nr_seq = nr_seq;
+	}
+	public String getNr_int_seq() {
+		return nr_int_seq;
+	}
+	public void setNr_int_seq(String nr_int_seq) {
+		this.nr_int_seq = nr_int_seq;
 	}
 
 

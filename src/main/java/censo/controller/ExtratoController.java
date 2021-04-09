@@ -13,7 +13,7 @@ import censo.controller.dto.ExtratoDto;
 import censo.model.Extrato;
 
 @RestController
-@RequestMapping("/hspmsgh-api/extrato")
+@RequestMapping("/hspmsgh-api/assessor/extrato")
 public class ExtratoController {
 	
 	@GetMapping("/{prontuarioId}")

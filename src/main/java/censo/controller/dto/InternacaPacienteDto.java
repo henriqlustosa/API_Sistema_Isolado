@@ -109,6 +109,7 @@ public static List<Internacao> Internacoes(Long _prontuario) {
 					internacao.setDt_saida_paciente(dt_saida_paciente);
 				}
 				internacao.setDc_tipo_alta_medica(resultSet.getString("dc_tipo_alta_medica"));
+				internacao.setNr_seq(resultSet.getString("nr_seq"));
 									
 				internacoes.add(internacao);
 

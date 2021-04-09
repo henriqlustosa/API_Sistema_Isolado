@@ -30,6 +30,7 @@ public class Internacao {
 	private String dt_alta_medica;
 	private String dt_saida_paciente;
 	private String dc_tipo_alta_medica;
+	private String nr_seq;
 	public Long getCd_prontuario() {
 		return cd_prontuario;
 	}
@@ -204,6 +205,7 @@ public class Internacao {
 	public void setDc_tipo_alta_medica(String dc_tipo_alta_medica) {
 		this.dc_tipo_alta_medica = dc_tipo_alta_medica;
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -237,6 +239,9 @@ public class Internacao {
 		result = prime * result + ((sg_cid == null) ? 0 : sg_cid.hashCode());
 		result = prime * result + ((st_leito == null) ? 0 : st_leito.hashCode());
 		result = prime * result + ((tx_observacao == null) ? 0 : tx_observacao.hashCode());
+		result = prime * result + ((nr_seq == null) ? 0 : nr_seq.hashCode());
+		
+		
 		return result;
 	}
 	@Override
@@ -393,7 +398,19 @@ public class Internacao {
 				return false;
 		} else if (!tx_observacao.equals(other.tx_observacao))
 			return false;
+		
+		if (nr_seq == null) {
+			if (other.nr_seq != null)
+				return false;
+		} else if (!nr_seq.equals(other.nr_seq))
+			return false;
 		return true;
+	}
+	public String getNr_seq() {
+		return nr_seq;
+	}
+	public void setNr_seq(String nr_seq) {
+		this.nr_seq = nr_seq;
 	}
 
 }
