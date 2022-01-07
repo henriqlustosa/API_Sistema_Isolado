@@ -22,10 +22,18 @@ public class AssessorImportacaoDto {
 		String strSql ="SELECT * FROM agh.v_paciente where cd_prontuario between  " + codigoInicial + " and " + codigoFinal ;
 		try {
 		
-			if(dataAlteracao != null )
+			if(dataAlteracao != null & codigoInicial != null  & codigoFinal != null)
 			{
 				   
 				strSql = strSql.concat( "and dt_recadastro " + " >= '" + dataAlteracao + "'");  
+				   
+				   
+				    	
+			}
+			if(dataAlteracao != null & codigoInicial == null  & codigoFinal == null)
+			{
+				   
+				strSql = "SELECT * FROM agh.v_paciente where dt_recadastro >= '"  + dataAlteracao + "'";  
 				   
 				   
 				    	
@@ -48,7 +56,7 @@ public class AssessorImportacaoDto {
 				paciente.setNm_nome_social(resultSet.getString("nm_nome_social"));
 				paciente.setNm_vinculo(resultSet.getString("nm_vinculo"));
 				paciente.setNm_orgao(resultSet.getString("nm_orgao"));
-				paciente.setCd_rf_matricula(resultSet.getLong("cd_rf_matricula"));
+				paciente.setCd_rf_matricula(resultSet.getString("cd_rf_matricula"));
 				paciente.setIn_sexo(resultSet.getString("in_sexo"));
 				paciente.setDc_cor(resultSet.getString("dc_cor"));
 				paciente.setDc_estado_civil(resultSet.getString("dc_estado_civil"));
@@ -56,8 +64,19 @@ public class AssessorImportacaoDto {
 				paciente.setNm_mae(resultSet.getString("nm_mae"));
 				paciente.setNm_pai(resultSet.getString("nm_pai"));
 				
-				String dt_nascimetno = dateFormat.format(resultSet.getTimestamp("dt_data_nascimento"));
-				paciente.setDt_data_nascimento(dt_nascimetno);
+				
+				
+				String dt_nascimetno = resultSet.getString("dt_data_nascimento");
+				
+				if (dt_nascimetno == null) {
+					paciente.setDt_data_nascimento(dt_nascimetno);
+				} else {
+					dt_nascimetno = dateFormat.format(resultSet.getTimestamp("dt_data_nascimento"));
+					paciente.setDt_data_nascimento(dt_nascimetno);
+				}
+				
+				
+			
 				paciente.setNr_idade(resultSet.getLong("nr_idade"));
 				paciente.setNm_nacionalidade(resultSet.getString("nm_nacionalidade"));
 				paciente.setNm_naturalidade(resultSet.getString("nm_naturalidade"));

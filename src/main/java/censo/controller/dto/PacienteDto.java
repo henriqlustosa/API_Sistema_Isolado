@@ -29,7 +29,7 @@ public class PacienteDto {
 				paciente.setNm_nome_social(resultSet.getString("nm_nome_social"));
 				paciente.setNm_vinculo(resultSet.getString("nm_vinculo"));
 				paciente.setNm_orgao(resultSet.getString("nm_orgao"));
-				paciente.setCd_rf_matricula(resultSet.getLong("cd_rf_matricula"));
+				paciente.setCd_rf_matricula(resultSet.getString("cd_rf_matricula"));
 				paciente.setIn_sexo(resultSet.getString("in_sexo"));
 				paciente.setDc_cor(resultSet.getString("dc_cor"));
 				paciente.setDc_estado_civil(resultSet.getString("dc_estado_civil"));

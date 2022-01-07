@@ -34,6 +34,9 @@ public class AssessorInternacaoAltaDto {
 		}else if (tipo==2) { 
 			sqlString +=  "WHERE dt_internacao::date between '"+ dt_inicio +"' AND '"+ dt_fim +"' ORDER BY dt_internacao";
 		}
+		else if (tipo==3) { 
+			sqlString +=  "WHERE dt_alta_medica is null";
+		}
 		
 		//String sqlString = "SELECT * FROM agh.v_internacao " +
 		//					" WHERE dt_internacao::date = '"+ data +"'";

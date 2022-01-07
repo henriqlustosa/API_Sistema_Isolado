@@ -7,7 +7,7 @@ public class Paciente {
 	private String nm_nome_social;
 	private String nm_vinculo;
 	private String nm_orgao;
-	private Long cd_rf_matricula;
+	private String cd_rf_matricula;
 	private String in_sexo;
 	private String dc_cor;
 	private String dc_estado_civil;
@@ -107,10 +107,10 @@ public class Paciente {
 	public void setNm_orgao(String nm_orgao) {
 		this.nm_orgao = nm_orgao;
 	}
-	public Long getCd_rf_matricula() {
+	public String getCd_rf_matricula() {
 		return cd_rf_matricula;
 	}
-	public void setCd_rf_matricula(Long cd_rf_matricula) {
+	public void setCd_rf_matricula(String cd_rf_matricula) {
 		this.cd_rf_matricula = cd_rf_matricula;
 	}
 	public String getIn_sexo() {

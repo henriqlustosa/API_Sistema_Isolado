@@ -20,7 +20,7 @@ public class AssessorCodigoLeitoDto {
 		ArrayList<Codigo> censos = new ArrayList<Codigo>();
 		PreparedStatement preparedStatement;
 
-		String sqlString = "SELECT * FROM agh.v_ain_censo_24_horas where quarto != '' ;";
+		String sqlString = "SELECT * FROM agh.v_lista_lto_unf order by lto_id  ;";
 
 		try {
 
@@ -34,8 +34,11 @@ public class AssessorCodigoLeitoDto {
 				Codigo censo = new Codigo();
 
 				
-				censo.setNr_quarto(resultSet.getString("quarto"));
-				censo.setNm_unidade_funcional(resultSet.getString("unidade_funcional"));
+				censo.setNr_quarto(resultSet.getString("lto_id"));
+				censo.setNm_unidade_funcional(resultSet.getString("descricao"));
+				censo.setNm_unidade_funcional_cod(resultSet.getString("unf_seq"));
+				censo.setInd_situacao(resultSet.getString("ind_situacao"));
+				censo.setInd_bloq_leito_limpeza(resultSet.getString("ind_bloq_leito_limpeza"));
 				
 			
 				censos.add(censo);

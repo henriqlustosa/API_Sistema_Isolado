@@ -32,7 +32,7 @@ public static List<Internacao> Internacoes(Long _prontuario) {
 
 				//  WHERE dt_internacao::date between '2019-08-21' AND '2019-08-30' ORDER BY dt_internacao;
 		
-		String sqlString = "SELECT * FROM agh.v_internacao where cd_prontuario = " + _prontuario + " ;"; 
+		String sqlString = "SELECT * FROM agh.v_internacao where cd_prontuario = " + _prontuario + " ORDER BY dt_internacao desc;"; 
 		
 		//if(tipo==1) {
 			

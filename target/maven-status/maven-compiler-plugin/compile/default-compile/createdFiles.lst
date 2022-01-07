@@ -10,6 +10,8 @@ censo\controller\dto\InternacaPacienteDto.class
 censo\controller\dto\CensoNepiDto.class
 censo\controller\dto\ExtratoDto.class
 censo\controller\dto\CensoPacienteDto.class
+censo\model\CentroCirurgico.class
+censo\controller\dto\CentroCirurgicoDto.class
 censo\CensoApplication.class
 censo\controller\dto\AssessorPacienteDto.class
 censo\controller\AssessorInternacaoAltaController.class
@@ -27,6 +29,7 @@ censo\controller\dto\AssessorUltimoCadastroInseridoDto.class
 censo\controller\dto\AssessorCodigoLeitoDto.class
 censo\controller\CensoController.class
 censo\controller\AssessorCodigoLeitoController.class
+censo\controller\CentroCirurgicoController.class
 censo\controller\AssessorUltimoCadastroController.class
 censo\model\Extrato.class
 censo\controller\AssessorPacienteController.class
