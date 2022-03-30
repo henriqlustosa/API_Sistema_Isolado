@@ -14,7 +14,7 @@ import censo.model.Paciente;
 import censo.persistence.Conexao;
 
 public class AssessorPacienteDto {
-	public static ArrayList<Paciente> paciente(String codigoDoRH, String nome,String mae ,String CPF,String CNS, String dataDeNascimento,String logradouro, String numero, String bairro, String RF, String status) {
+	public static ArrayList<Paciente> paciente(String codigoDoRH, String nome,String mae ,String CPF,String CNS, String dataDeNascimento,String logradouro, String numero, String bairro, String RF, String status, String _limit ) {
 		ArrayList<Paciente> pacientes = new ArrayList<Paciente>();
 	
 		PreparedStatement preparedStatement;
@@ -35,6 +35,7 @@ public class AssessorPacienteDto {
 			dictionary.put("dc_bairro", bairro);
 			dictionary.put("cd_rf_matricula", RF);
 			dictionary.put("nm_situacao", status);
+			dictionary.put("limit", _limit);
 			
 			int  count = 0;
 			
@@ -106,6 +107,21 @@ public class AssessorPacienteDto {
 					    		else
 					    		{
 					    			strSql = strSql.concat(" and "  + entry.getKey() + " like '" + _nome + "'");
+					    		}
+				    			 continue;
+				    		}
+				    		if(entry.getKey() == "limit" )
+				    		{
+				    			String _nome  = entry.getValue();
+				    			
+				    			
+				    			_nome = _nome.replace("\'", "");
+				    			if(count == 1 ) {
+					    			strSql = strSql.concat( entry.getKey()  + " " +_nome );
+					    		}
+					    		else
+					    		{
+					    			strSql = strSql.concat(" "  + entry.getKey() + " " +  _nome );
 					    		}
 				    			 continue;
 				    		}

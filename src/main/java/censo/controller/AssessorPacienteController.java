@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 public class AssessorPacienteController {
 	@CrossOrigin(origins="*")
 	@GetMapping()
-	public ResponseEntity<List<Paciente>> getAssessorPaciente(String codigoDoRH, String nome,String mae ,String CPF,String CNS, String dataDeNascimento,String logradouro, String numero, String bairro, String RF, String status){
+	public ResponseEntity<List<Paciente>> getAssessorPaciente(String codigoDoRH, String nome,String mae ,String CPF,String CNS, String dataDeNascimento,String logradouro, String numero, String bairro, String RF, String status, String _limit){
 		
-		List<Paciente> pacientes = AssessorPacienteDto.paciente( codigoDoRH,  nome,mae , CPF, CNS,  dataDeNascimento, logradouro,  numero,  bairro,  RF,  status);	
+		List<Paciente> pacientes = AssessorPacienteDto.paciente( codigoDoRH,  nome,mae , CPF, CNS,  dataDeNascimento, logradouro,  numero,  bairro,  RF,  status, _limit);	
 		
 		//if(paciente.getCd_prontuario() == null) {
 			//return ResponseEntity.notFound().build();			
