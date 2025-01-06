@@ -31,6 +31,7 @@ public class EtiquetaEmergenciaDto {
 				etiqueta.setData_nascimento(resultSet.getString("Data Nascimento"));
 				etiqueta.setSexo(resultSet.getString("Sexo"));
 				etiqueta.setNm_mae_paciente(resultSet.getString("Nome Mae"));
+				etiqueta.setNm_pai_paciente(resultSet.getString("Nome Pai"));
 				etiqueta.setNm_social(resultSet.getString("Nome Social"));
 				
 						

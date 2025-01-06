@@ -9,6 +9,7 @@ public class EtiquetaEmergencia {
 	private String data_nascimento;
 	private String sexo;
 	private String nm_mae_paciente;
+	private String nm_pai_paciente;
 	private String nm_social;
 	
 	
@@ -48,6 +49,14 @@ public class EtiquetaEmergencia {
 	public void setNm_mae_paciente(String nm_mae_paciente) {
 		this.nm_mae_paciente = nm_mae_paciente;
 	}
+	public String getNm_pai_paciente() {
+		return nm_pai_paciente;
+	}
+	public void setNm_pai_paciente(String nm_pai_paciente) {
+		this.nm_pai_paciente = nm_pai_paciente;
+	}
+	
+
 	public String getNm_social() {
 		return nm_social;
 	}
@@ -56,7 +65,7 @@ public class EtiquetaEmergencia {
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(check_in, data_nascimento, nm_consulta, nm_mae_paciente, nm_paciente, sexo, nm_social);
+		return Objects.hash(check_in, data_nascimento, nm_consulta, nm_mae_paciente,nm_pai_paciente, nm_paciente, sexo, nm_social);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -70,6 +79,7 @@ public class EtiquetaEmergencia {
 		return Objects.equals(check_in, other.check_in) && Objects.equals(data_nascimento, other.data_nascimento)
 				&& Objects.equals(nm_consulta, other.nm_consulta)
 				&& Objects.equals(nm_mae_paciente, other.nm_mae_paciente)
+				&& Objects.equals(nm_pai_paciente, other.nm_pai_paciente)
 				&& Objects.equals(nm_paciente, other.nm_paciente) && Objects.equals(sexo, other.sexo) && Objects.equals(nm_social, other.nm_social);
 	}
 
